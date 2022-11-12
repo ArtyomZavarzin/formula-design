@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'Ultramono wide black';
+  src: url('./assets/fonts/ultramono-wide-black/UltramonoWide-Black.ttf')
+    format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playen Sans';
+  src: url('./assets/fonts/Playen Sans/Webfont/PlayenSans-Regular.woff2')
+      format('woff2'),
+    url('./assets/fonts/Playen Sans/Webfont/PlayenSans-Regular.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #1d1e1c;
+  font-family: 'JetBrains Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

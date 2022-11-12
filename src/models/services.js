@@ -1,0 +1,98 @@
+export const servicesModel = [
+  {
+    id: 0,
+    title: 'бренд',
+    color: '#EF4141',
+    page: 0,
+  },
+  {
+    id: 1,
+    title: 'UX/UI',
+    color: '#4152EF',
+    page: 0,
+  },
+  {
+    id: 2,
+    title: 'интерьерный',
+    color: '#C241EF',
+    page: 0,
+  },
+  {
+    id: 3,
+    title: 'промышленный',
+    color: '#18AD39',
+    page: 0,
+  },
+  {
+    id: 4,
+    title: 'web',
+    color: '#EF41C9',
+    page: 0,
+  },
+  {
+    id: 5,
+    title: 'motion',
+    color: '#6B41EF',
+    page: 0,
+  },
+  {
+    id: 6,
+    title: 'VR/AR',
+    color: '#EFB441',
+    page: 0,
+  },
+  {
+    id: 7,
+    title: 'графический',
+    color: '#419BEF',
+    page: 0,
+  },
+  {
+    id: 8,
+    title: 'гейм',
+    color: '#EF6B41',
+    page: 0,
+  },
+  {
+    id: 9,
+    title: 'лендинг',
+    color: '#EF41C9',
+    page: 1,
+  },
+  {
+    id: 10,
+    title: 'интернет-магазин',
+    color: '#419BEF',
+    page: 1,
+  },
+  {
+    id: 11,
+    title: 'приложение',
+    color: '#00CFFF',
+    page: 1,
+  },
+  {
+    id: 12,
+    title: 'сайт-визитка',
+    color: '#EFB441',
+    page: 1,
+  },
+  {
+    id: 13,
+    title: 'корпоративный сайт',
+    color: '#9B00FF',
+    page: 1,
+  },
+  {
+    id: 14,
+    title: 'другое',
+    color: '#EF4141',
+    page: 1,
+  },
+  {
+    id: 15,
+    title: 'сделайте красиво    ',
+    color: '#EF4141',
+    page: 2,
+  },
+];
