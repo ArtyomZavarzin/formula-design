@@ -19,6 +19,8 @@ const SendButton = styled.button`
   border: none;
   outline: none;
   cursor: pointer;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
   width: 100%;
   background: linear-gradient(90deg, #ef4141 0%, #c241ef 52.08%, #6b41ef 100%);
   border-radius: 77px;

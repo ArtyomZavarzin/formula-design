@@ -12,6 +12,8 @@ const StyledBlock = styled.div`
   & div {
     user-select: none;
     cursor: pointer;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: transparent;
     text-align: center;
     flex-grow: 1;
     color: white;
