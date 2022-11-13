@@ -66,7 +66,19 @@ const SendButton = styled.button`
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   -webkit-tap-highlight-color: transparent;
   width: 100%;
-  background: linear-gradient(90deg, #ef4141 0%, #c241ef 52.08%, #6b41ef 100%);
+  /* background: linear-gradient(90deg, #ef4141 0%, #c241ef 52.08%, #6b41ef 100%); */
+  background: ${({ colors }) => {
+    if (colors.length > 1) {
+      let step = 100 / (colors.length - 1);
+      return (
+        'linear-gradient(90deg,' +
+        colors.map((color, index) => ` ${color} ${step * index}%`) +
+        ')'
+      );
+    } else {
+      return colors[0];
+    }
+  }};
   border-radius: 77px;
   font-family: 'Ultramono Wide Black';
   font-style: normal;
@@ -186,7 +198,12 @@ export const ServiceSendModal = ({ isOpen, onClose, selectedList }) => {
             <ErrorText>{contactError}</ErrorText>
           </Block>
 
-          <SendButton onClick={onSend}>Отправить</SendButton>
+          <SendButton
+            onClick={onSend}
+            colors={selectedList.map((el) => el.color)}
+          >
+            Отправить
+          </SendButton>
           <Text>
             нажимая кнопку отправить, вы соглашаетесь
             <br />с{' '}
