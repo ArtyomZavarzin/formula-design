@@ -15,9 +15,9 @@ const Modal = styled.div`
   color: black;
   top: 0;
   left: 0;
-  overflow-y: hidden;
+
   & > div {
-    overflow: scroll;
+    overflow-y: auto;
     bottom: 0;
     max-height: 100vh;
     width: 100vw;
