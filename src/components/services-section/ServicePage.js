@@ -48,8 +48,10 @@ export const ServicePage = ({
           <ServiceButton
             key={ser.id}
             color={ser.color}
-            onClick={() => onServiceClick(ser.id)}
-            className={selectedList[ser.id] ? 'selected' : ''}
+            onClick={() => onServiceClick(ser)}
+            className={
+              selectedList.some((el) => ser.id === el.id) ? 'selected' : ''
+            }
           >
             {ser.title}
           </ServiceButton>

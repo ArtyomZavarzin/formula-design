@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import { servicesModel } from '../../models/services';
 import { useCallback, useState } from 'react';
 import { ServicePage } from './ServicePage';
+import { ServiceSendModal } from './ServiceSendModal';
 
 const Wrapper = styled.div`
   margin-left: -26px;
@@ -16,7 +17,6 @@ const Wrapper = styled.div`
 const SendButton = styled.button`
   margin-top: 25px;
   margin-bottom: 25px;
-  border: none;
   outline: none;
   cursor: pointer;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
@@ -32,6 +32,15 @@ const SendButton = styled.button`
   text-transform: uppercase;
   color: #ffffff;
   text-align: center;
+  border: 1px solid #1d1e1c;
+
+  transition: all 0.3s;
+
+  &:disabled {
+    opacity: 0.5;
+    border-color: #ffffff;
+    background: inherit;
+  }
 `;
 
 const StyledSwiper = styled(Swiper)`
@@ -45,19 +54,16 @@ const StyledSwiper = styled(Swiper)`
 `;
 
 export const ServicesSection = () => {
-  const [selectedList, setSelectedList] = useState(
-    (() => {
-      const list = {};
-      servicesModel.forEach((el) => {
-        list[el.id] = false;
-      });
-      return list;
-    })()
-  );
+  const [selectedList, setSelectedList] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
 
   const onServiceClick = useCallback(
-    (id) => {
-      setSelectedList({ ...selectedList, [id]: !selectedList[id] });
+    (service) => {
+      if (selectedList.some((el) => el.id === service.id)) {
+        setSelectedList(selectedList.filter((el) => el.id !== service.id));
+      } else {
+        setSelectedList([...selectedList, service]);
+      }
     },
     [selectedList]
   );
@@ -113,7 +119,18 @@ export const ServicesSection = () => {
           </SwiperSlide>
         </StyledSwiper>
       </Wrapper>
-      <SendButton>Отправить</SendButton>
+      <SendButton
+        onClick={() => setIsOpen(true)}
+        disabled={selectedList.length === 0}
+      >
+        Отправить
+      </SendButton>
+
+      <ServiceSendModal
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        selectedList={selectedList}
+      />
     </>
   );
 };
