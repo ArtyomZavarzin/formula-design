@@ -91,7 +91,7 @@ export const servicesModel = [
   },
   {
     id: 15,
-    title: 'сделайте красиво    ',
+    title: 'сделать красиво',
     color: ['#EF4141', '#C241EF', '#6B41EF'],
     page: 2,
     isGradient: true,
