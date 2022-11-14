@@ -34,7 +34,7 @@
 
 @keyframes show-modal-container {
   0% {
-    left: 100vw;
+    bottom: -100vw;
   }
   100% {
     left: 0;
@@ -46,6 +46,6 @@
     left: 0;
   }
   100% {
-    left: 100vw;
+    bottom: -100vw;
   }
 }

@@ -3,56 +3,16 @@ import { Pagination } from 'swiper';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { servicesModel } from '../../models/services';
 import { useCallback, useState } from 'react';
 import { ServicePage } from './ServicePage';
 import { ServiceSendModal } from './ServiceSendModal';
+import { SendButton } from '../styled-components/Buttons';
 
 const Wrapper = styled.div`
   margin-left: -26px;
   margin-right: -26px;
-`;
-
-const SendButton = styled.button`
-  margin-top: 25px;
-  margin-bottom: 25px;
-  outline: none;
-  cursor: pointer;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-  -webkit-tap-highlight-color: transparent;
-  width: 100%;
-  /* background: linear-gradient(90deg, #ef4141 0%, #c241ef 52.08%, #6b41ef 100%); */
-  background: ${({ colors }) => {
-    if (colors.length > 1) {
-      let step = 100 / (colors.length - 1);
-      return (
-        'linear-gradient(90deg,' +
-        colors.map((color, index) => ` ${color} ${step * index}%`) +
-        ')'
-      );
-    } else {
-      return colors[0];
-    }
-  }};
-  border-radius: 77px;
-  font-family: 'Ultramono Wide Black';
-  font-style: normal;
-  font-weight: 900;
-  font-size: 18px;
-  line-height: 42px;
-  text-transform: uppercase;
-  color: #ffffff;
-  text-align: center;
-  border: 1px solid #1d1e1c;
-
-  transition: all 0.3s;
-
-  &:disabled {
-    opacity: 0.5;
-    border-color: #ffffff;
-    background: inherit;
-  }
 `;
 
 const StyledSwiper = styled(Swiper)`
@@ -134,7 +94,15 @@ export const ServicesSection = () => {
       <SendButton
         onClick={() => setIsOpen(true)}
         disabled={selectedList.length === 0}
-        colors={selectedList.map((el) => el.color)}
+        colors={selectedList.reduce(
+          (arr, el) =>
+            el.isGradient ? [...arr, ...el.color] : [...arr, el.color],
+          []
+        )}
+        marginStyles={css`
+          margin-top: 25px;
+          margin-bottom: 25px;
+        `}
       >
         Отправить
       </SendButton>

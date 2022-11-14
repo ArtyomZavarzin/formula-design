@@ -10,6 +10,7 @@ export const Title = styled.p`
   text-transform: ${({ isUppercase = false }) =>
     !isUppercase ? 'none' : 'uppercase'};
   white-space: pre-line;
+  ${({ marginStyles }) => marginStyles}
 `;
 
 export const SubTitle = styled.p`

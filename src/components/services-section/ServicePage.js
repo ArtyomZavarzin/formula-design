@@ -1,18 +1,6 @@
 import styled from 'styled-components';
+import { ServiceButton } from '../styled-components/Buttons';
 import { Title } from '../styled-components/Titles';
-
-const ServiceButton = styled.span`
-  border: ${({ color }) => '1px solid ' + color};
-  color: white;
-  line-height: 40px;
-  padding-left: 16px;
-  padding-right: 16px;
-  border-radius: 108px;
-  transition: 0.15s;
-  &.selected {
-    background-color: ${({ color }) => color};
-  }
-`;
 
 const Container = styled.div`
   flex-grow: 1;
@@ -25,7 +13,7 @@ const Container = styled.div`
 `;
 
 const Page = styled.div`
-  height: 190px;
+  min-height: 190px;
   padding-left: 26px;
   padding-right: 26px;
   display: flex;
@@ -49,9 +37,8 @@ export const ServicePage = ({
             key={ser.id}
             color={ser.color}
             onClick={() => onServiceClick(ser)}
-            className={
-              selectedList.some((el) => ser.id === el.id) ? 'selected' : ''
-            }
+            selected={selectedList.some((el) => ser.id === el.id)}
+            isGradient={ser.isGradient}
           >
             {ser.title}
           </ServiceButton>

@@ -4,7 +4,7 @@ import figure from '../assets/icons/figure-main-page.png';
 export const AnimatedBlock = styled.div`
   padding-left: 32px;
   padding-right: 32px;
-  margin-bottom: 42px;
+  margin-bottom: 60px;
   background-image: url('${figure}');
   height: 290px;
   background-position-x: center;

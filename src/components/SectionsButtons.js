@@ -8,7 +8,7 @@ const StyledBlock = styled.div`
   transform: translateY(-50%);
   background-color: #1d1e1c;
   display: flex;
-  margin-bottom: 20px;
+
   & div {
     user-select: none;
     cursor: pointer;
