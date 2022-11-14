@@ -37,13 +37,13 @@
     bottom: -100vw;
   }
   100% {
-    bottom: calc(var(--vh, 1vh) * 100 - 100vh);
+    bottom: calc(100vh - var(--vh, 1vh) * 100);
   }
 }
 
 @keyframes hide-modal-container {
   0% {
-    bottom: calc(var(--vh, 1vh) * 100 - 100vh);
+    bottom: calc(100vh - var(--vh, 1vh) * 100);
   }
   100% {
     bottom: -100vw;
