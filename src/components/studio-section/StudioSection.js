@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Title } from '../styled-components/Titles';
 
@@ -25,6 +26,18 @@ const Blackout = styled.div`
 `;
 
 export const StudioSection = () => {
+  const [height, setHeight] = useState(null);
+  useEffect(() => {
+    const fff = () => {
+      setHeight(window.innerHeight);
+    };
+    window.addEventListener('resize', fff);
+    fff();
+
+    return () => {
+      window.removeEventListener('resize', fff);
+    };
+  }, []);
   return (
     <>
       <TextContainer>
@@ -36,7 +49,7 @@ export const StudioSection = () => {
           – команда дизайнеров и разработчиков из Сибири, создающих лучший
           визуальный и программный продукт для передовых компаний по всему миру.
         </Text>
-
+        <span style={{ color: 'white' }}>{height}</span>
         <Title withPadding={true}>Наша команда</Title>
         <Text>
           – синтез людей, идей, амбиций и целей:
