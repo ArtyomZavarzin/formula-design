@@ -28,7 +28,7 @@ export const SendButton = styled.button`
   text-transform: uppercase;
   color: #ffffff;
   text-align: center;
-  border: 1px solid transparent;
+  border: 1px solid #ffffff00;
 
   transition: all 0.3s;
 
