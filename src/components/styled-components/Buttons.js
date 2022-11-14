@@ -16,7 +16,7 @@ export const SendButton = styled.button`
         ')'
       );
     } else {
-      return colors[0];
+      return `linear-gradient(90deg, ${colors[0]}, ${colors[0]})`;
     }
   }};
   border-radius: 77px;
