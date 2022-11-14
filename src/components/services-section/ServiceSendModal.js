@@ -17,7 +17,7 @@ const Modal = styled.div`
 
   & > div {
     overflow-y: auto;
-    bottom: 0;
+    bottom: calc(var(--vh, 1vh) * 100 - 100vh);
     max-height: 100vh;
     width: 100vw;
     position: absolute;
