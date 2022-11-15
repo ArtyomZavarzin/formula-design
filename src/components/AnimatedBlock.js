@@ -1,14 +1,29 @@
 import styled from 'styled-components';
 import figure from '../assets/icons/figure-main-page.png';
+import video from '../assets/videos/animation.mp4';
 
-export const AnimatedBlock = styled.div`
-  padding-left: 32px;
-  padding-right: 32px;
-  margin-bottom: 60px;
-  background-image: url('${figure}');
-  height: 290px;
-  background-position-x: center;
-  background-repeat: no-repeat;
-  background-position-y: center;
-  background-size: min(100%, 460px) auto;
+const StyledBlock = styled.div`
+  overflow: hidden;
+  width: auto;
+  height: 45vh;
+  position: relative;
+  & video {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+  }
 `;
+
+export const AnimatedBlock = () => {
+  return (
+    <StyledBlock>
+      <video loop='loop' autoplay='autoplay' muted='muted' id='myVideo'>
+        <source src={`${video}`} type='video/mp4' />
+      </video>
+    </StyledBlock>
+  );
+};

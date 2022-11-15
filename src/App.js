@@ -8,7 +8,7 @@ import { ContentBlock } from './components/ContentBlock';
 function App() {
   return (
     <div className='App'>
-      <Header />
+      {/* <Header /> */}
       <AnimatedBlock />
       <ContentBlock />
     </div>

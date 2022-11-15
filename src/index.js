@@ -5,9 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 window.onload = (event) => {
-  let vh = window.visualViewport.height * 0.01;
+  let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
-  window.visualViewport.addEventListener('resize', () => {
+  window.addEventListener('resize', () => {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
   });
