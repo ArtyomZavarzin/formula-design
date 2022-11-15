@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 window.onload = (event) => {
   let vh = window.visualViewport.height * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
-  window.visualViewport.height.addEventListener('resize', () => {
+  window.visualViewport.addEventListener('resize', () => {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
   });
