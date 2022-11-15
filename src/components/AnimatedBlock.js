@@ -19,7 +19,13 @@ const StyledBlock = styled.div`
 export const AnimatedBlock = () => {
   return (
     <StyledBlock>
-      <video loop='loop' autoplay='autoplay' muted='muted' id='myVideo'>
+      <video
+        loop='loop'
+        autoplay='autoplay'
+        muted='muted'
+        id='myVideo'
+        playsInline='playsInline'
+      >
         <source src={`${video}`} type='video/mp4' />
       </video>
     </StyledBlock>
