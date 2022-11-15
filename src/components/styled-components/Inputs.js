@@ -7,6 +7,7 @@ const StyledInput = styled.input`
   width: 100%;
   font-family: 'JetBrains Mono';
   margin-top: 8px;
+  font-size: 16px;
 
   &::placeholder {
     font-style: normal;
