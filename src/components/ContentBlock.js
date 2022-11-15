@@ -11,6 +11,15 @@ const StyledWrapper = styled.div`
   border-top: 2px solid white;
   padding-left: 26px;
   padding-right: 26px;
+  margin-top: -36px;
+  flex-grow: 1;
+  overflow: auto;
+`;
+
+const StyledContent = styled.div`
+  margin: 0 -26px 0 -26px;
+  padding: 36px 26px 46px 26px;
+  height: 100%;
 `;
 
 const sectionComponents = {
@@ -23,13 +32,15 @@ const sectionComponents = {
 export const ContentBlock = () => {
   const [currentSection, setCurrentSection] = useState(Sections.LINKS);
   return (
-    <StyledWrapper>
+    <>
       <SectionsButtons
         sections={sectionsModel}
         currentSection={currentSection}
         setCurrentSection={setCurrentSection}
       />
-      {sectionComponents[currentSection]}
-    </StyledWrapper>
+      <StyledWrapper>
+        <StyledContent>{sectionComponents[currentSection]}</StyledContent>
+      </StyledWrapper>
+    </>
   );
 };

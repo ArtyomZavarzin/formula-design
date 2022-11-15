@@ -8,10 +8,10 @@ const Text = styled.p`
 `;
 
 const TextContainer = styled.div`
-  margin: -36px -26px 0 -26px;
+  /* margin: -36px -26px 0 -26px;
   padding: 36px 26px 46px 26px;
   height: calc(var(--vh, 1vh) * 100 - 45vh);
-  overflow: auto;
+  overflow: auto; */
 `;
 
 const Blackout = styled.div`

@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 
 const StyledBlock = styled.div`
-  width: 100%;
+  /* width: 100%; */
+  margin: 0 26px;
   padding: 1px;
   border: 2px solid white;
   border-radius: 20px;
   transform: translateY(-50%);
   background-color: #1d1e1c;
   display: flex;
+  z-index: 15;
 
   & div {
     user-select: none;

@@ -1,19 +1,17 @@
 import styled from 'styled-components';
-import figure from '../assets/icons/figure-main-page.png';
 import video from '../assets/videos/animation.mp4';
 
 const StyledBlock = styled.div`
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
   overflow: hidden;
   width: auto;
-  height: 45vh;
+  height: calc(100vw + 42px);
+  max-height: calc(45vh + 40px);
   position: relative;
   & video {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    width: auto;
     height: 100%;
   }
 `;
