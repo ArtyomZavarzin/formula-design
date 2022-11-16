@@ -51,8 +51,9 @@
 }
 
 .App {
-  max-height: calc(var(--vh, 1vh) * 100);
+  height: calc(var(--vh, 1vh) * 100);
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  position: relative;
 }

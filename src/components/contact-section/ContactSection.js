@@ -30,6 +30,10 @@ const TextBlock = styled.div`
   margin-bottom: 12px;
   margin-top: 14px;
   position: relative;
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
 `;
 
 const Text = styled.p`

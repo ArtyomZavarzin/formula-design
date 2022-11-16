@@ -14,12 +14,13 @@ const StyledWrapper = styled.div`
   margin-top: -36px;
   flex-grow: 1;
   overflow: auto;
+  /* min-height: 376px; */
 `;
 
 const StyledContent = styled.div`
   margin: 0 -26px 0 -26px;
-  padding: 36px 26px 46px 26px;
-  height: 100%;
+  padding: 36px 26px 26px 26px;
+  /* height: 100%; */
 `;
 
 const sectionComponents = {

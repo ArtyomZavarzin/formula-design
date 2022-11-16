@@ -1,25 +1,31 @@
 import styled from 'styled-components';
 import video from '../assets/videos/animation.mp4';
+import photo from '../assets/videos/mock.jpg';
 
 const StyledBlock = styled.div`
-  flex-shrink: 0;
+  /* flex-shrink: 0; */
   display: flex;
   justify-content: center;
   overflow: hidden;
-  width: auto;
-  height: calc(100vw + 42px);
-  max-height: calc(45vh + 40px);
+  /* width: auto; */
+  /* height: calc(100vw + 42px); */
+  max-height: calc(100vh - 378px);
   position: relative;
-  & video {
-    width: auto;
-    height: 100%;
+
+  flex-shrink: 0;
+
+  height: calc(100vw - 20px);
+
+  & > * {
+    width: 100vw;
+    height: 100vw;
   }
 `;
 
 export const AnimatedBlock = () => {
   return (
     <StyledBlock>
-      <video
+      {/* <video
         loop='loop'
         autoplay='autoplay'
         muted='muted'
@@ -27,7 +33,8 @@ export const AnimatedBlock = () => {
         playsInline='playsInline'
       >
         <source src={`${video}`} type='video/mp4' />
-      </video>
+      </video> */}
+      <img src={photo} alt='11' />
     </StyledBlock>
   );
 };

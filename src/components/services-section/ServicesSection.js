@@ -100,8 +100,7 @@ export const ServicesSection = () => {
           []
         )}
         marginStyles={css`
-          margin-top: 25px;
-          margin-bottom: 25px;
+          margin-top: 14px;
         `}
       >
         Отправить
