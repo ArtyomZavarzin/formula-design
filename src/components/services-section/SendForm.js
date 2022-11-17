@@ -146,6 +146,7 @@ export const SendForm = ({
             el.isGradient ? [...arr, ...el.color] : [...arr, el.color],
           []
         )}
+        borderColor='white'
       >
         Отправить
       </SendButton>
