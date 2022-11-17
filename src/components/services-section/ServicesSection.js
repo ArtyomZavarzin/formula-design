@@ -9,10 +9,18 @@ import { useCallback, useState } from 'react';
 import { ServicePage } from './ServicePage';
 import { ServiceSendModal } from './ServiceSendModal';
 import { SendButton } from '../styled-components/Buttons';
+import { appearAnim } from './Styles';
 
 const Wrapper = styled.div`
   margin-left: -26px;
   margin-right: -26px;
+  animation: ${appearAnim} 0.7s forwards;
+`;
+
+const WrapperBtn = styled.div`
+  animation: ${appearAnim} 0.7s forwards;
+  opacity: 0;
+  animation-delay: 0.15s;
 `;
 
 const StyledSwiper = styled(Swiper)`
@@ -91,20 +99,22 @@ export const ServicesSection = () => {
           </SwiperSlide>
         </StyledSwiper>
       </Wrapper>
-      <SendButton
-        onClick={() => setIsOpen(true)}
-        disabled={selectedList.length === 0}
-        colors={selectedList.reduce(
-          (arr, el) =>
-            el.isGradient ? [...arr, ...el.color] : [...arr, el.color],
-          []
-        )}
-        marginStyles={css`
-          margin-top: 14px;
-        `}
-      >
-        Отправить
-      </SendButton>
+      <WrapperBtn>
+        <SendButton
+          onClick={() => setIsOpen(true)}
+          disabled={selectedList.length === 0}
+          colors={selectedList.reduce(
+            (arr, el) =>
+              el.isGradient ? [...arr, ...el.color] : [...arr, el.color],
+            []
+          )}
+          marginStyles={css`
+            margin-top: 14px;
+          `}
+        >
+          Отправить
+        </SendButton>
+      </WrapperBtn>
 
       <ServiceSendModal
         isOpen={isOpen}

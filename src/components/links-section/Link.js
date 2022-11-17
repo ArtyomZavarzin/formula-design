@@ -1,5 +1,20 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { SubTitle, Title } from '../styled-components/Titles';
+import { scale, slide } from './Styles';
+
+const animation = (from, delay = 1.5, borderColor) => {
+  return css`
+    animation: ${slide(from, borderColor)} 0.7s forwards;
+    animation-delay: ${delay + 0.1}s;
+    opacity: 0;
+    /* border-color: transparent; */
+    & > div {
+      animation: ${scale} 1s forwards;
+      animation-delay: ${delay + 0.1 + 0.1}s;
+      transform: scaleY(0);
+    }
+  `;
+};
 
 const StyledLink = styled.div`
   cursor: pointer;
@@ -13,6 +28,10 @@ const StyledLink = styled.div`
   padding-top: 10px;
   overflow: hidden;
   position: relative;
+
+  ${({ from, delay, borderColor }) =>
+    from && animation(from, delay, borderColor)}
+
   & svg {
     bottom: -32px;
     right: 16px;
@@ -20,7 +39,15 @@ const StyledLink = styled.div`
   }
 `;
 
-export const Link = ({ title, subtitle = ' ', icon, link, textColor }) => {
+export const Link = ({
+  title,
+  subtitle = ' ',
+  icon,
+  link,
+  textColor,
+  from,
+  delay,
+}) => {
   const handleClick = () => {
     if (link) {
       window.open(link, '_blank');
@@ -28,7 +55,12 @@ export const Link = ({ title, subtitle = ' ', icon, link, textColor }) => {
   };
 
   return (
-    <StyledLink onClick={handleClick} borderColor={textColor}>
+    <StyledLink
+      onClick={handleClick}
+      borderColor={textColor}
+      from={from}
+      delay={delay}
+    >
       <div>
         <Title isUppercase={true} color={textColor}>
           {title}

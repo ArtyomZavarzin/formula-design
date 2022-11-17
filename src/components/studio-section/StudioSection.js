@@ -1,11 +1,6 @@
 import styled from 'styled-components';
-import { Title } from '../styled-components/Titles';
-
-const Text = styled.p`
-  color: white;
-  margin-top: 8px;
-  margin-bottom: 24px;
-`;
+import { Text, Title } from '../styled-components/Titles';
+import { slide } from './Styles';
 
 const TextContainer = styled.div`
   /* margin: -36px -26px 0 -26px;
@@ -28,25 +23,29 @@ export const StudioSection = () => {
   return (
     <>
       <TextContainer>
-        <Title withPadding={true}>
+        <Title withPadding={true} anim={slide} delay={0.1}>
           Привет, <br />
           &nbsp;это ФОРМУЛА
         </Title>
-        <Text>
+        <Text anim={slide} delay={0.2}>
           – команда дизайнеров и разработчиков из Сибири, создающих лучший
           визуальный и программный продукт для передовых компаний по всему миру.
         </Text>
 
-        <Title withPadding={true}>Наша команда</Title>
-        <Text>
+        <Title withPadding={true} anim={slide} delay={0.2}>
+          Наша команда
+        </Title>
+        <Text anim={slide} delay={0.3}>
           – синтез людей, идей, амбиций и целей:
           <br />
           создать, обучиться, популяризировать и повысить качество реализуемых
           визуальных и технических качеств продуктов.
         </Text>
 
-        <Title withPadding={true}>Наши проекты</Title>
-        <Text>
+        <Title withPadding={true} anim={slide} delay={0.3}>
+          Наши проекты
+        </Title>
+        <Text anim={slide} delay={0.4}>
           – совокупность продуманных идей, современных решений и грамотной
           реализации.
         </Text>

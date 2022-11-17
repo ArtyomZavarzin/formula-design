@@ -1,8 +1,9 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Title } from '../styled-components/Titles';
 import { ReactComponent as Line1 } from '../../assets/decorations/line1.svg';
 import { ReactComponent as Line2 } from '../../assets/decorations/line2.svg';
 import { ReactComponent as Line3 } from '../../assets/decorations/line3.svg';
+import { slide, slide2 } from '../studio-section/Styles';
 
 const Line1Container = styled.div`
   pointer-events: none;
@@ -34,6 +35,14 @@ const TextBlock = styled.div`
   &:last-child {
     margin-bottom: 0px;
   }
+
+  ${({ anim, delay }) =>
+    anim &&
+    css`
+      animation: ${anim} 0.8s forwards;
+      animation-delay: ${delay}s;
+      opacity: 0;
+    `}
 `;
 
 const Text = styled.p`
@@ -55,10 +64,10 @@ const ContactLink = styled.a`
 export const ContactSection = () => {
   return (
     <>
-      <Title withPadding={true} isUppercase={true}>
+      <Title withPadding={true} isUppercase={true} anim={slide} delay={0.1}>
         телефон
       </Title>
-      <TextBlock>
+      <TextBlock anim={slide2} delay={0.1}>
         <Text>
           <ContactLink href='tel:+79039550077'>+7 (903) 955 00 77</ContactLink>
         </Text>
@@ -67,10 +76,10 @@ export const ContactSection = () => {
         </Text>
       </TextBlock>
 
-      <Title withPadding={true} isUppercase={true}>
+      <Title withPadding={true} isUppercase={true} anim={slide} delay={0.2}>
         почта
       </Title>
-      <TextBlock>
+      <TextBlock anim={slide2} delay={0.2}>
         <Line1Container>
           <Line1 />
         </Line1Container>
@@ -83,7 +92,7 @@ export const ContactSection = () => {
           для вопросов и сотрудничества
         </Text>
       </TextBlock>
-      <TextBlock>
+      <TextBlock anim={slide2} delay={0.3}>
         <Line2Container>
           <Line2 />
         </Line2Container>
@@ -97,10 +106,10 @@ export const ContactSection = () => {
         </Text>
       </TextBlock>
 
-      <Title withPadding={true} isUppercase={true}>
+      <Title withPadding={true} isUppercase={true} anim={slide} delay={0.3}>
         адрес
       </Title>
-      <TextBlock>
+      <TextBlock anim={slide2} delay={0.3}>
         <Line3Container>
           <Line3 />
         </Line3Container>

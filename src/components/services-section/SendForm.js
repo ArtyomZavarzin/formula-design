@@ -129,7 +129,7 @@ export const SendForm = ({
 
       <Block>
         <Title withPadding={true} isUppercase={true} color='black'>
-          а тут контакты<SpanRed> *</SpanRed>
+          а тут контакты{contactError && <SpanRed> *</SpanRed>}
         </Title>
         <RoundedInput
           placeholder='Номер телефона или почта'

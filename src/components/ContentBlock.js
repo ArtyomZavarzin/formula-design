@@ -13,7 +13,9 @@ const StyledWrapper = styled.div`
   padding-right: 26px;
   margin-top: -36px;
   flex-grow: 1;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-width: 100vw;
   /* min-height: 376px; */
 `;
 
@@ -24,7 +26,7 @@ const StyledContent = styled.div`
 `;
 
 const sectionComponents = {
-  [Sections.LINKS]: <LinkSection />,
+  [Sections.LINKS]: <LinkSection animated={true} />,
   [Sections.STUDIO]: <StudioSection />,
   [Sections.CONTACTS]: <ContactSection />,
   [Sections.SERVICES]: <ServicesSection />,

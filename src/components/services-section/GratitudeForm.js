@@ -13,7 +13,7 @@ const CloseBtnContainer = styled.div`
 const Text = styled.p`
   margin-top: 8px;
   margin-bottom: 14px;
-  padding-left: 16px;
+  /* padding-left: 16px; */
 `;
 
 const HeartContainer = styled.div`
@@ -26,7 +26,7 @@ export const GratitudeForm = ({ handleClose, selectedList }) => {
   return (
     <>
       <CloseBtnContainer>
-        <Title withPadding={true} isUppercase={true} color='black'>
+        <Title isUppercase={true} color='black'>
           спасибо за заявку
         </Title>
         <CloseBtn onClick={handleClose} />
@@ -44,7 +44,6 @@ export const GratitudeForm = ({ handleClose, selectedList }) => {
       </HeartContainer>
 
       <Title
-        withPadding={true}
         isUppercase={true}
         color='black'
         marginStyles={css`

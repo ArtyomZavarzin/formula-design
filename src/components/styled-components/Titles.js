@@ -1,4 +1,12 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const animation = (anim, delay = 1.5) => {
+  return css`
+    animation: ${anim} 0.8s forwards;
+    animation-delay: ${delay}s;
+    opacity: 0;
+  `;
+};
 
 export const Title = styled.p`
   color: ${({ color = 'white' }) => color};
@@ -11,6 +19,8 @@ export const Title = styled.p`
     !isUppercase ? 'none' : 'uppercase'};
   white-space: pre-line;
   ${({ marginStyles }) => marginStyles}
+
+  ${({ anim, delay }) => anim && animation(anim, delay)}
 `;
 
 export const SubTitle = styled.p`
@@ -21,4 +31,12 @@ export const SubTitle = styled.p`
   line-height: 8px;
   height: 11px;
   vertical-align: baseline;
+`;
+
+export const Text = styled.p`
+  color: white;
+  margin-top: 8px;
+  margin-bottom: 24px;
+
+  ${({ anim, delay }) => anim && animation(anim, delay)}
 `;

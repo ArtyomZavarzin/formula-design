@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
 
 export const HeartIcon = ({ colors }) => {
-  console.log(colors);
   const gradientComponents = useMemo(() => {
     if (colors.length > 1) {
       let step = 1 / (colors.length - 1);
