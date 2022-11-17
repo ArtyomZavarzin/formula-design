@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import video from '../assets/videos/animation.mp4';
+import video from '../assets/videos/anim1.mp4';
 import photo from '../assets/videos/mock.jpg';
 
 const StyledBlock = styled.div`
@@ -25,7 +25,7 @@ const StyledBlock = styled.div`
 export const AnimatedBlock = () => {
   return (
     <StyledBlock>
-      {/* <video
+      <video
         loop='loop'
         autoplay='autoplay'
         muted='muted'
@@ -33,8 +33,8 @@ export const AnimatedBlock = () => {
         playsInline='playsInline'
       >
         <source src={`${video}`} type='video/mp4' />
-      </video> */}
-      <img src={photo} alt='11' />
+      </video>
+      {/* <img src={photo} alt='11' /> */}
     </StyledBlock>
   );
 };
