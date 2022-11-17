@@ -9,7 +9,9 @@ const StyledBlock = styled.div`
   transform: translateY(-50%);
   background-color: #1d1e1c;
   display: flex;
+  justify-content: space-around;
   z-index: 15;
+  position: relative;
 
   & div {
     user-select: none;
@@ -17,17 +19,33 @@ const StyledBlock = styled.div`
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     -webkit-tap-highlight-color: transparent;
     text-align: center;
-    flex-grow: 1;
+    /* flex-grow: 1; */
+    width: calc((100%) / 4);
     color: white;
     height: 30px;
     line-height: 30px;
     border-radius: 15px;
     font-size: 12px;
-    transition: 0.15s;
+    transition: 0.25s 0.15s;
   }
   & div.current {
-    background-color: white;
+    /* background-color: white; */
     color: black;
+  }
+  &::after {
+    position: absolute;
+    content: '';
+    background-color: white;
+    width: calc((100% - 2px) / 4);
+
+    top: 1px;
+    bottom: 1px;
+    left: calc(
+      1px + calc((100% - 2px) / 4) * ${({ currentIndex }) => currentIndex}
+    );
+    border-radius: 15px;
+    transition: 0.25s;
+    z-index: -1;
   }
 `;
 
@@ -37,7 +55,9 @@ export const SectionsButtons = ({
   setCurrentSection,
 }) => {
   return (
-    <StyledBlock>
+    <StyledBlock
+      currentIndex={sections.findIndex((el) => el.section === currentSection)}
+    >
       {sections.map((section, index) => (
         <div
           key={index}
