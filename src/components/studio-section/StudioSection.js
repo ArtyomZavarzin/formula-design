@@ -9,6 +9,8 @@ import { ReactComponent as Icon5 } from '../../assets/text-icons/icon5.svg';
 import { ReactComponent as Icon6 } from '../../assets/text-icons/icon6.svg';
 import { ReactComponent as Icon7 } from '../../assets/text-icons/icon7.svg';
 import { ReactComponent as Icon8 } from '../../assets/text-icons/icon8.svg';
+import { ReactComponent as Icon9 } from '../../assets/text-icons/icon9.svg';
+import { ReactComponent as Icon10 } from '../../assets/text-icons/icon10.svg';
 
 const TextContainer = styled.div`
   /* margin: -36px -26px 0 -26px;
@@ -120,6 +122,26 @@ export const StudioSection = () => {
             в каждом нашем проекте
           </span>
           .
+        </Text>
+
+        <Title withPadding={true} anim={slide} delay={0.4}>
+          Наши клиенты
+        </Title>
+        <Text
+          style={{ textIndent: '16px' }}
+          fontFamily='Playen Sans'
+          anim={slide2}
+          delay={0.5}
+        >
+          смелые компании, готовые{' '}
+          <IconWrapper delay={0.85}>
+            <Icon9 /> предложить
+          </IconWrapper>{' '}
+          лучший{' '}
+          <IconWrapper delay={0.9}>
+            <Icon10 /> продукт
+          </IconWrapper>{' '}
+          своему потребителю.
         </Text>
         <Blackout />
       </TextContainer>
