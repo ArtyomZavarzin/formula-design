@@ -18,7 +18,7 @@ const animation = (from, delay = 1.5, borderColor) => {
 
 const StyledLink = styled.div`
   cursor: pointer;
-  border-bottom: ${({ borderColor }) => '1px solid ' + borderColor};
+  /* border-bottom: ${({ borderColor }) => '1px solid ' + borderColor}; */
   display: flex;
   margin-left: -10px;
   margin-right: -10px;
@@ -33,9 +33,22 @@ const StyledLink = styled.div`
     from && animation(from, delay, borderColor)}
 
   & svg {
-    bottom: -32px;
+    bottom: -29px;
     right: 16px;
     position: absolute;
+    & .gradient__brand {
+      stop-color: transparent;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    height: 1px;
+    bottom: 0;
+    left: -10px;
+    right: -10px;
+    background-color: ${({ borderColor }) => borderColor};
   }
 `;
 
