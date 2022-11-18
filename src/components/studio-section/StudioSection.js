@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Text, Title } from '../styled-components/Titles';
-import { slide } from './Styles';
+import { slide, slide2 } from './Styles';
 
 const TextContainer = styled.div`
   /* margin: -36px -26px 0 -26px;
@@ -27,7 +27,7 @@ export const StudioSection = () => {
           Привет, <br />
           &nbsp;это ФОРМУЛА
         </Title>
-        <Text anim={slide} delay={0.2}>
+        <Text anim={slide2} delay={0.2}>
           – команда дизайнеров и разработчиков из Сибири, создающих лучший
           визуальный и программный продукт для передовых компаний по всему миру.
         </Text>
@@ -35,7 +35,7 @@ export const StudioSection = () => {
         <Title withPadding={true} anim={slide} delay={0.2}>
           Наша команда
         </Title>
-        <Text anim={slide} delay={0.3}>
+        <Text anim={slide2} delay={0.3}>
           – синтез людей, идей, амбиций и целей:
           <br />
           создать, обучиться, популяризировать и повысить качество реализуемых
@@ -45,7 +45,7 @@ export const StudioSection = () => {
         <Title withPadding={true} anim={slide} delay={0.3}>
           Наши проекты
         </Title>
-        <Text anim={slide} delay={0.4}>
+        <Text anim={slide2} delay={0.4}>
           – совокупность продуманных идей, современных решений и грамотной
           реализации.
         </Text>
