@@ -56,7 +56,9 @@ export const ServiceSendModal = ({ isOpen, onClose, selectedList }) => {
     if (contact === '') {
       setContactError('*это обязательное к заполнению поле');
     } else {
-      const message = `У вас новая заявка!\n\nИмя: ${name}\nКонтакты: ${contact}`;
+      const message = `У вас новая заявка!\n\nИмя: ${name}\nКонтакты: ${contact}\nВыбрано: ${selectedList
+        .map((el) => el.title)
+        .join(', ')}`;
       setIsLoading(true);
       axios
         .post(apiUrl, {
