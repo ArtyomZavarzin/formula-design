@@ -44,7 +44,7 @@ export const StudioSection = () => {
           Наша студия
         </Title>
         <Text
-          style={{ textIndent: '20px' }}
+          style={{ textIndent: '16px' }}
           fontFamily='Playen Sans'
           anim={slide2}
           delay={0.2}
@@ -70,7 +70,7 @@ export const StudioSection = () => {
           Наша команда
         </Title>
         <Text
-          style={{ textIndent: '20px' }}
+          style={{ textIndent: '16px' }}
           fontFamily='Playen Sans'
           anim={slide2}
           delay={0.3}
@@ -101,12 +101,12 @@ export const StudioSection = () => {
           Наши проекты
         </Title>
         <Text
-          style={{ textIndent: '20px' }}
+          style={{ textIndent: '16px' }}
           fontFamily='Playen Sans'
           anim={slide2}
           delay={0.4}
         >
-          – совокупность продуманных
+          совокупность продуманных
           <IconWrapper delay={0.7}>
             <Icon6 />
           </IconWrapper>
