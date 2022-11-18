@@ -1,6 +1,14 @@
 import styled from 'styled-components';
 import { Text, Title } from '../styled-components/Titles';
-import { slide, slide2 } from './Styles';
+import { animation, slide, slide2 } from './Styles';
+import { ReactComponent as Icon1 } from '../../assets/text-icons/icon1.svg';
+import { ReactComponent as Icon2 } from '../../assets/text-icons/icon2.svg';
+import { ReactComponent as Icon3 } from '../../assets/text-icons/icon3.svg';
+import { ReactComponent as Icon4 } from '../../assets/text-icons/icon4.svg';
+import { ReactComponent as Icon5 } from '../../assets/text-icons/icon5.svg';
+import { ReactComponent as Icon6 } from '../../assets/text-icons/icon6.svg';
+import { ReactComponent as Icon7 } from '../../assets/text-icons/icon7.svg';
+import { ReactComponent as Icon8 } from '../../assets/text-icons/icon8.svg';
 
 const TextContainer = styled.div`
   /* margin: -36px -26px 0 -26px;
@@ -19,35 +27,102 @@ const Blackout = styled.div`
   background: linear-gradient(0deg, #1d1e1c 0%, rgba(29, 30, 28, 0) 100%);
 `;
 
+const IconWrapper = styled.span`
+  & svg {
+    margin-right: 6px;
+    margin-left: 6px;
+    vertical-align: middle;
+    ${({ delay }) => animation(slide2, delay)}
+  }
+`;
+
 export const StudioSection = () => {
   return (
     <>
       <TextContainer>
         <Title withPadding={true} anim={slide} delay={0.1}>
-          Привет, <br />
-          &nbsp;это ФОРМУЛА
+          Наша студия
         </Title>
-        <Text anim={slide2} delay={0.2}>
-          – команда дизайнеров и разработчиков из Сибири, создающих лучший
-          визуальный и программный продукт для передовых компаний по всему миру.
+        <Text
+          style={{ textIndent: '20px' }}
+          fontFamily='Playen Sans'
+          anim={slide2}
+          delay={0.2}
+        >
+          {'  '}
+          команда
+          <IconWrapper delay={0.45}>
+            <Icon1 />
+          </IconWrapper>
+          дизайнеров и <span style={{ color: '#EF6B41' }}>&lt;</span>
+          разработчиков<span style={{ color: '#EF6B41' }}>/&gt;</span> из
+          Сибири, создающих лучший визуальный и
+          <IconWrapper delay={0.5}>
+            <Icon2 />
+          </IconWrapper>
+          программный продукт для передовых компаний по всему миру
+          <IconWrapper delay={0.55}>
+            <Icon3 />
+          </IconWrapper>
         </Text>
 
         <Title withPadding={true} anim={slide} delay={0.2}>
           Наша команда
         </Title>
-        <Text anim={slide2} delay={0.3}>
-          – синтез людей, идей, амбиций и целей:
+        <Text
+          style={{ textIndent: '20px' }}
+          fontFamily='Playen Sans'
+          anim={slide2}
+          delay={0.3}
+        >
+          <span
+            style={{
+              padding: '0 3px',
+              background:
+                'linear-gradient(90deg, #EF4141 0%, #C241EF 52.08%, #6B41EF 100%)',
+            }}
+          >
+            синтез
+          </span>{' '}
+          людей, идей, амбиций и
+          <IconWrapper delay={0.6}>
+            <Icon4 />
+          </IconWrapper>
+          целей:
           <br />
-          создать, обучиться, популяризировать и повысить качество реализуемых
-          визуальных и технических качеств продуктов.
+          создать, популяризировать и повысить качество реализуемых
+          <IconWrapper delay={0.65}>
+            <Icon5 />
+          </IconWrapper>
+          визуальных и технических характеристик продуктов.
         </Text>
 
         <Title withPadding={true} anim={slide} delay={0.3}>
           Наши проекты
         </Title>
-        <Text anim={slide2} delay={0.4}>
-          – совокупность продуманных идей, современных решений и грамотной
-          реализации.
+        <Text
+          style={{ textIndent: '20px' }}
+          fontFamily='Playen Sans'
+          anim={slide2}
+          delay={0.4}
+        >
+          – совокупность продуманных
+          <IconWrapper delay={0.7}>
+            <Icon6 />
+          </IconWrapper>
+          идей, современных
+          <IconWrapper delay={0.75}>
+            <Icon7 />
+          </IconWrapper>
+          решений и грамотной
+          <IconWrapper delay={0.8}>
+            <Icon8 />
+          </IconWrapper>
+          реализации{' '}
+          <span style={{ textDecoration: 'underline' }}>
+            в каждом нашем проекте
+          </span>
+          .
         </Text>
         <Blackout />
       </TextContainer>

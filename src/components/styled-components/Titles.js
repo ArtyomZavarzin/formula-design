@@ -37,6 +37,10 @@ export const Text = styled.p`
   color: white;
   margin-top: 8px;
   margin-bottom: 24px;
-
+  ${({ fontFamily }) =>
+    fontFamily &&
+    css`
+      font-family: ${fontFamily};
+    `}
   ${({ anim, delay }) => anim && animation(anim, delay)}
 `;

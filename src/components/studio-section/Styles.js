@@ -1,4 +1,12 @@
-import { keyframes } from 'styled-components';
+import { css, keyframes } from 'styled-components';
+
+export const animation = (anim, delay = 1.5) => {
+  return css`
+    animation: ${anim} 0.8s forwards;
+    animation-delay: ${delay}s;
+    opacity: 0;
+  `;
+};
 
 export const slide = keyframes`
     0% {
