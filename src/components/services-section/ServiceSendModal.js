@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import '../../App.css';
 import { SendForm } from './SendForm';
 import { GratitudeForm } from './GratitudeForm';
+import axios from 'axios';
 
 const Modal = styled.div`
   position: fixed;
@@ -27,10 +28,16 @@ const Modal = styled.div`
   }
 `;
 
+const chatId = '-1001844032971';
+const token = '5814709849:AAGzC4LNaboxykfcvHgL8-I6PvBp0ryI-s0';
+const apiUrl = `https://api.telegram.org/bot${token}/sendMessage`;
+
 export const ServiceSendModal = ({ isOpen, onClose, selectedList }) => {
   const [name, setName] = useState('');
   const [contact, setContact] = useState('');
   const [contactError, setContactError] = useState('');
+  const [isSendError, setIsSendError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [isSended, setIsSended] = useState(false);
 
@@ -42,15 +49,32 @@ export const ServiceSendModal = ({ isOpen, onClose, selectedList }) => {
     setName('');
     setContact('');
     setIsSended(false);
+    setIsSendError(false);
   });
 
   const onSend = useCallback(() => {
     if (contact === '') {
       setContactError('*это обязательное к заполнению поле');
     } else {
-      setIsSended(true);
+      const message = `У вас новая заявка!\n\nИмя: ${name}\nКонтакты: ${contact}`;
+      setIsLoading(true);
+      axios
+        .post(apiUrl, {
+          chat_id: chatId,
+          parse_mod: 'html',
+          text: message,
+        })
+        .then(() => {
+          setIsSended(true);
+        })
+        .catch((error) => {
+          setIsSendError(true);
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
     }
-  }, [contact]);
+  }, [contact, name]);
 
   return (
     <CSSTransition
@@ -73,6 +97,8 @@ export const ServiceSendModal = ({ isOpen, onClose, selectedList }) => {
               setName={setName}
               setContact={setContact}
               contactError={contactError}
+              isSendError={isSendError}
+              isLoading={isLoading}
             />
           ) : (
             <GratitudeForm

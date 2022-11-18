@@ -21,8 +21,13 @@ const StyledInput = styled.input`
   }
 `;
 
-export const RoundedInput = ({ placeholder, value, onChange }) => {
+export const RoundedInput = ({ placeholder, value, onChange, disabled }) => {
   return (
-    <StyledInput placeholder={placeholder} value={value} onChange={onChange} />
+    <StyledInput
+      placeholder={placeholder}
+      value={value}
+      onChange={onChange}
+      disabled={disabled}
+    />
   );
 };

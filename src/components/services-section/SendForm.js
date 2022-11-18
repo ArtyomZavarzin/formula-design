@@ -83,6 +83,8 @@ export const SendForm = ({
   setName,
   setContact,
   contactError,
+  isSendError,
+  isLoading,
 }) => {
   return (
     <>
@@ -121,6 +123,7 @@ export const SendForm = ({
           здесь твоё имя
         </Title>
         <RoundedInput
+          disabled={isLoading}
           placeholder='Как к тебе обращаться'
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -132,11 +135,13 @@ export const SendForm = ({
           а тут контакты{contactError && <SpanRed> *</SpanRed>}
         </Title>
         <RoundedInput
+          disabled={isLoading}
           placeholder='Номер телефона или почта'
           value={contact}
           onChange={(e) => setContact(e.target.value)}
         />
         <ErrorText>{contactError}</ErrorText>
+        {isSendError ? <ErrorText>Возникла ошибка</ErrorText> : <></>}
       </Block>
 
       <SendButton
@@ -147,6 +152,8 @@ export const SendForm = ({
           []
         )}
         borderColor='white'
+        disabled={isLoading}
+        alwaysBg={true}
       >
         Отправить
       </SendButton>

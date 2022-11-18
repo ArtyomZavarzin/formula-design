@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const SendButton = styled.button`
   outline: none;
@@ -35,7 +35,12 @@ export const SendButton = styled.button`
   &:disabled {
     opacity: 0.5;
     border-color: #ffffff;
-    background: inherit;
+    ${({ alwaysBg = false }) =>
+      !alwaysBg
+        ? css`
+            background: inherit;
+          `
+        : ''};
   }
 
   ${({ marginStyles }) => marginStyles}
