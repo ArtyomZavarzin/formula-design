@@ -20,6 +20,15 @@ const StyledBlock = styled.div`
     width: 100vw;
     height: 100vw;
   }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 `;
 
 export const AnimatedBlock = () => {
