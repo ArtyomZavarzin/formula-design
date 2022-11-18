@@ -28,9 +28,8 @@ const Blackout = styled.div`
 `;
 
 const IconWrapper = styled.span`
+  white-space: nowrap;
   & svg {
-    margin-right: 6px;
-    margin-left: 6px;
     vertical-align: middle;
     ${({ delay }) => animation(slide2, delay)}
   }
@@ -50,19 +49,19 @@ export const StudioSection = () => {
           delay={0.2}
         >
           {'  '}
-          команда
+          команда{' '}
           <IconWrapper delay={0.45}>
-            <Icon1 />
-          </IconWrapper>
-          дизайнеров и <span style={{ color: '#EF6B41' }}>&lt;</span>
+            <Icon1 /> дизайнеров
+          </IconWrapper>{' '}
+          и <span style={{ color: '#EF6B41' }}>&lt;</span>
           разработчиков<span style={{ color: '#EF6B41' }}>/&gt;</span> из
           Сибири, создающих лучший визуальный и
           <IconWrapper delay={0.5}>
-            <Icon2 />
-          </IconWrapper>
-          программный продукт для передовых компаний по всему миру
+            <Icon2 /> программный
+          </IconWrapper>{' '}
+          продукт для передовых компаний по всему{' '}
           <IconWrapper delay={0.55}>
-            <Icon3 />
+            миру <Icon3 />
           </IconWrapper>
         </Text>
 
@@ -84,17 +83,16 @@ export const StudioSection = () => {
           >
             синтез
           </span>{' '}
-          людей, идей, амбиций и
+          людей, идей, амбиций и{' '}
           <IconWrapper delay={0.6}>
-            <Icon4 />
+            <Icon4 /> целей:
           </IconWrapper>
-          целей:
           <br />
-          создать, популяризировать и повысить качество реализуемых
+          создать, популяризировать и повысить качество реализуемых{' '}
           <IconWrapper delay={0.65}>
-            <Icon5 />
-          </IconWrapper>
-          визуальных и технических характеристик продуктов.
+            <Icon5 /> визуальных
+          </IconWrapper>{' '}
+          и технических характеристик продуктов.
         </Text>
 
         <Title withPadding={true} anim={slide} delay={0.3}>
@@ -106,19 +104,18 @@ export const StudioSection = () => {
           anim={slide2}
           delay={0.4}
         >
-          совокупность продуманных
+          совокупность продуманных{' '}
           <IconWrapper delay={0.7}>
-            <Icon6 />
-          </IconWrapper>
-          идей, современных
+            <Icon6 /> идей,
+          </IconWrapper>{' '}
+          современных{' '}
           <IconWrapper delay={0.75}>
-            <Icon7 />
-          </IconWrapper>
-          решений и грамотной
+            <Icon7 /> решений
+          </IconWrapper>{' '}
+          и грамотной{' '}
           <IconWrapper delay={0.8}>
-            <Icon8 />
-          </IconWrapper>
-          реализации{' '}
+            <Icon8 /> реализации
+          </IconWrapper>{' '}
           <span style={{ textDecoration: 'underline' }}>
             в каждом нашем проекте
           </span>
