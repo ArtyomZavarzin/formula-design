@@ -6,6 +6,7 @@ import { RoundedInput } from '../styled-components/Inputs';
 import { SendButton, ServiceButton } from '../styled-components/Buttons';
 import { SwiperSlide, Swiper } from 'swiper/react';
 import { FreeMode } from 'swiper';
+import politics from '../../assets/files/политика_конфиденциальности_Формула_дизайна.pdf';
 
 const Block = styled.div`
   margin-bottom: 18px;
@@ -160,7 +161,7 @@ export const SendForm = ({
       <Text>
         нажимая кнопку отправить, вы соглашаетесь
         <br />с{' '}
-        <Link href='http://www.google.com' target='_blank' rel='noreferrer'>
+        <Link href='politics' download={'download'}>
           политикой конфиденциональности
         </Link>{' '}
         компании
