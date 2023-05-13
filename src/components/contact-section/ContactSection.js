@@ -23,7 +23,18 @@ const Line3Container = styled.div`
   pointer-events: none;
   position: absolute;
   top: 12px;
-  right: 184px;
+  right: 193px;
+
+  &::after {
+    bottom: 5.5px;
+    /* top: 17.25px; */
+    width: 82px;
+    height: 0.5px;
+    content: '';
+    background-color: #ef6b41;
+    position: absolute;
+    left: 100%;
+  }
 `;
 
 const TextBlock = styled.div`
@@ -113,9 +124,9 @@ export const ContactSection = () => {
         <Line3Container>
           <Line3 />
         </Line3Container>
-        <Text>г. Томск, ул. Кузнецова 17</Text>
+        <Text>г. Томск, ул. Советская 108</Text>
         <Text fontSize={12} lineHeight={15} isSubtext={true}>
-          центральный вход «Дом со шпилем»
+          домофон «формула»
         </Text>
       </TextBlock>
     </>
